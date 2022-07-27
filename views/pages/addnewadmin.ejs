@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+
+  <body>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" >
+
+  
+        <div style="width: 50%; margin:auto; position: relative; top: 160px; ">
+            <h1> اضافة مستخدم منظومة جديد </h1>
+            <form action="/addadmin" method="POST">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> اسم المستخدم</label>
+                  <input type="text" class="form-control" name="adminname" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> كلمة المرور</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+
+                <button type="submit" class="btn btn-primary">اضافة</button>
+              </form>
+       
+        
+        
+        </div>
+
+
+
+
+    </div>
+
+
+    <%- include('../partials/bottom') %>
+  </body>
+</html>

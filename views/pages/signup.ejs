@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')  %> 
+    <title>Sign Up</title>
+</head>
+
+
+
+<body>
+
+    
+
+
+    <form action="/createuser" method="POST">
+        <h3>make new admin account</h3>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Username </label>
+          <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+
+        <div id="emailHelp" class="form-text">  <a href="/">Login to your Account</a></div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+      </form>
+
+      <%  if(message){ %> 
+        <div class="alert alert-danger" role="alert">
+          <%= message  %> 
+        </div>
+        <% } %>
+
+    <%- include('../partials/bottom.ejs')  %> 
+</body>
+</html>

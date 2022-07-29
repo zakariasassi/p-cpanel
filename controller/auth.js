@@ -1,11 +1,11 @@
 const db = require('../config/db');
-
+const cookie = require('cookie-parser')
 
 //import models
 const usersmodel = require('../model/User');
 
 
-
+const {createToken , validetoken} = require('../jwt');
 
 
 
@@ -25,31 +25,39 @@ exports.signup  = (req , res) =>  {
 
 exports.loginuser  =  async (req , res) =>  {
     const {username , upassword} = req.body
-     const user = await usersmodel.findAll({
+     const user = await usersmodel.findOne({
         where: {
             username : username,
         }
+    }) 
 
-    })
-    console.log(user);
-    console.log(parseInt(user[0].password) );
-    dbpassword = user[0].password;
-    console.log(upassword);
-    
-
-
-    
-    if( parseInt(upassword) === parseInt(dbpassword)){
-        
-        res.render( "../views/pages/Home.ejs" , {
-             username :user[0].usssername,
+    if(!user) {
+        res.render('../views/pages/login.ejs' , {
+            message : "user is not exist in database !!"
         })
     }else{
-        res.render('../views/pages/login.ejs' , {
-            message : " هناك مشكلة في تسجيل الدخول"
-        })
-        
+        dbpassword = user.password;
+        console.log(dbpassword , user.username)
+        if( parseInt(upassword) === parseInt(dbpassword)){
+            const userToken =  createToken(user.username);
+            console.log(userToken);
+            res.cookie("access-token" , userToken , {
+                maxAge : 60*60*24*30*1000
+            });
+            
+            res.status(200);
+            res.json("zakaria sasi hi")
+            // res.render( "../views/pages/Home.ejs" , {
+            //      username :user[0].usssername,
+            // })
+        }else{
+            res.render('../views/pages/login.ejs' , {
+                message : "هناك مشكلة في تسجيل الدخول"
+            })
+            
+        }
     }
+
 }
 
 

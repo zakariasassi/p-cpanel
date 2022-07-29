@@ -16,6 +16,7 @@ exports.AddnewProdact = (req , res) => {
         res.render('../views/pages/addnewprodact');
 }
 
-exports.addNewProdact = (req , res) => {
+exports.insert = (req , res) => {
+    
     
 }

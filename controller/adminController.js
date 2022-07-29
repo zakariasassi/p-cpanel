@@ -13,10 +13,10 @@ exports.showPage = (req , res) => {
 }
 
 
-exports.showPageAddAdmin = (req , res) => {
+exports.addnewAdmin = (req , res) => {
     res.render('../views/pages/addnewadmin.ejs')
 }
 
-exports.addNewAdmin = (req , res) => {
+exports.insert = (req , res) => {
     
 }

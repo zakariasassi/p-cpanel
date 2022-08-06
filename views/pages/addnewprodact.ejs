@@ -6,34 +6,52 @@
 
   <body>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" >
+      <%- include('../partials/sidebr.ejs')  %> 
 
-  
-        <div style="width: 50%; margin:auto; position: relative; top: 160px; ">
+      <div class="page-breadcrumb">
+        <div class="row">
+          <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Tables</h4>
+            <div class="ms-auto text-end">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Prodact
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-wrapper">
+    <div class="container-fluid">
             <h1> اضاف منتج جديد </h1>
-            <form action="/addadmin" method="POST">
+            <form action="/addprodact" method="POST">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label"> اسم المنتج</label>
-                  <input type="text" class="form-control" name="adminname" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" name="prodactname" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> باركود المنتج</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="prodactbarcode" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">  بلد الصنع</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="prodactcountry" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> وصف المنتج</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="prodactdescription" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> مكونات المنتج</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="prodacrmade" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> تاريخ انتهاء الصلاحية</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="date" class="form-control" name="prodactexpired" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
 
 

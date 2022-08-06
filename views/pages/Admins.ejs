@@ -53,14 +53,20 @@
             </tr>
           </thead>
           <tbody>
-    
+            <% if (data){ %> 
+            <% data.forEach( function(index) {  %> 
             <tr>
-              <td>1 </td>
-              <td>System Admin</td>
-              <td>38476598376</td>
-            </tr>
+              <td><%= index.id  %>  </td>
+              <td> <%= index.username  %>  </td>
+              <td> <%= index.password %>  </td>
+              <td>
+                <a href="/deleteadmin/<%= index.id %> " style="color:red !important;"> حذف </a> <br>
+                <a href="/editadmin/<%= index.id %>"> تعديل </a> 
+              </td>
 
-       
+            </tr>
+            <% }); %> 
+            <% } %> 
           </tbody>
         </table>
       </div>

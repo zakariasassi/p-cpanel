@@ -17,25 +17,33 @@ const prodact = db.define('prodacts' , {
     prodactname : {
         type:STRING,
     },
+    prodactcountry : {
+        type:STRING
+    },
     prodactbarcode :  {
         type : INTEGER , 
-    },
-    dateend :{
-        type:STRING,
-    },
-    prodactmade : {
-        type:TEXT,
     },
     prodactdescription  : {
         type:TEXT,
     },
-    countrt : {
-        type:STRING
-    }
+    prodactmade : {
+        type:TEXT,
+    },
+    prodactexpired	 :{
+        type:STRING,
+    },
+    createdAt: {
+        field: 'created_at',
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        field: 'updated_at',
+        type: Sequelize.DATE,
+      },
 
 },{
     tableName: "prodacts",
-    timestamps: "falsr",
+    timestamps: "false",
     freezeTableName:true,
 
 })

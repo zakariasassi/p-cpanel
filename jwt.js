@@ -14,15 +14,17 @@ const createToken = (user) => {
 }
 
 const validetoken =  ( req , res , next) => {
+   
     const accessToken = req.cookies['access-token'];
-    if (!accessToken) 
+    if (!accessToken) {
+    console.log("User Not Autentecitd");
     res.status(400).json("User Not Autentecitd")
-
+    }
 
     try{
-        const validtoken   =   verify(accessToken , "applictionsecret");
+        const validtoken   =  verify(accessToken , "applictionsecret");
         if(validtoken) {
-            res.authenticated = true 
+            const authenticated = true 
             next()
         }
     }catch{
@@ -32,6 +34,8 @@ const validetoken =  ( req , res , next) => {
             }
         }
     }
+
+   
 }
 
 

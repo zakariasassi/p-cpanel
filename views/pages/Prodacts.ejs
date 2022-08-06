@@ -56,85 +56,26 @@
             </tr>
           </thead>
           <tbody>
-    
-            <tr>
-              <td>1</td>
-              <td>5345345436</td>
-              <td><p>
-                Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-              </p></td>
-              <td>kitcat</td>
-              <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-              <td>2009/08/19</td>
-              <td>Libya</td>
-            </tr>
+              
 
+
+            <% if (data){ %> 
+            <% data.forEach(function(element) { %>
+              
+          
             <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>5345345436</td>
-                <td><p>
-                  Lorem ipsum dolor, sim porro necessitatibus. Maxime, repellendus laboriosam!
-                </p></td>
-                <td>kitcat</td>
-                <td> <p>حليب-شكلاطة-ماء-املاح - حبوب لقاح - اكل - شراب - زبادي</p></td>
-                <td>2009/08/19</td>
-                <td>Libya</td>
-              </tr>
+              <td><%= element.id  %> </td>
+              <td><%= element.prodactname %></td>
+              <td><p>
+                <%= element.prodactdescription %>
+              </p></td>
+              <td><%= element.prodactcountry %> </td>
+              <td> <p> <%= element.prodactmade %>  </p></td>
+              <td> <%= element.prodactexpired  %>  </td>
+              <td> <%= element.prodactbarcode  %> </td>
+            </tr>
+          <%   }); %> 
+           <% } %> 
           </tbody>
         </table>
       </div>

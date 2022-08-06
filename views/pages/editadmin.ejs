@@ -29,14 +29,14 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-            <h1> اضافة مستخدم منظومة جديد </h1>
+            <h1> تعديل مستخدم منظومة جديد </h1>
             <form action="/addadmin" method="POST">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"> اسم المستخدم</label>
+                  <label for="exampleInputEmail1" class="form-label" value = <%= data.username  %> > اسم المستخدم</label>
                   <input type="text" class="form-control" name="adminname" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"> كلمة المرور</label>
+                    <label for="exampleInputEmail1" class="form-label" value = <%= data.password  %> > كلمة المرور</label>
                     <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
 

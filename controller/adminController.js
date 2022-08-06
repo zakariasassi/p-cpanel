@@ -6,17 +6,29 @@ const usersmodel = require('../model/User');
 
 
  
-exports.showPage = (req , res) => {
-    res.render('../views/pages/Admins.ejs'  , {
-        data : {},
-    })   
+exports.showPage = async (req , res) => {
+    const user =   await usersmodel.findAll();
+
+    res.render('../views/pages/Admins.ejs' , {
+             data:user,
+        }); 
 }
 
 
-exports.addnewAdmin = (req , res) => {
-    res.render('../views/pages/addnewadmin.ejs')
+exports.addnewAdmin =  (req , res) => {
+        res.render('../views/pages/addnewadmin.ejs')
 }
 
-exports.insert = (req , res) => {
+exports.insert =  async(req , res) => {
+    const  { adminname , password  } = req.body;
+
+    await  usersmodel.create({
+        username : adminname,
+        password : password ,
     
+    }).then ( res.redirect('/admins') ).catch((err) =>  {
+        if(err) {
+            console.log(err);
+        }
+    })
 }

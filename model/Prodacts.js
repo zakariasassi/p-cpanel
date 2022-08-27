@@ -21,7 +21,7 @@ const prodact = db.define('prodacts' , {
         type:STRING
     },
     prodactbarcode :  {
-        type : INTEGER , 
+        type : STRING , 
     },
     prodactdescription  : {
         type:TEXT,

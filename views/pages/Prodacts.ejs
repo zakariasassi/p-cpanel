@@ -38,7 +38,7 @@
         
 <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Basic Datatable</h5>
+      <h5 class="card-title">Prodacts</h5>
       <div class="table-responsive">
         <table
           id="zero_config"
@@ -73,6 +73,11 @@
               <td> <p> <%= element.prodactmade %>  </p></td>
               <td> <%= element.prodactexpired  %>  </td>
               <td> <%= element.prodactbarcode  %> </td>
+
+              <td>
+                <a href="/deleteprodact/<%= element.id %> " style="color:red !important;"> حذف </a> <br>
+                <a href="/editprodact/<%= element.id %>"> تعديل </a> 
+              </td>
             </tr>
           <%   }); %> 
            <% } %> 

@@ -11,7 +11,6 @@ const prodacts = require('../model/Prodacts');
 
 exports.showPage = async (req , res) => {
    const prodact =   await prodacts.findAll();
-
    res.render('../views/pages/Prodacts.ejs' , {
     data:prodact,
 })
@@ -31,14 +30,15 @@ exports.insert =  async (req , res) => {
     
     const  { prodactname , prodactcountry , prodactdescription , prodacrmade  , prodactbarcode , prodactexpired } = req.body;
 
-    await  Prodact.create({
+    await prodacts.create({
         prodactname : prodactname,
         prodactcountry : prodactcountry ,
-        prodactbarcode : prodactbarcode ,
+        prodactbarcode : prodactbarcode.toString() ,
         prodactdescription : prodactdescription,
         prodactmade : prodacrmade , 
         prodactexpired :prodactexpired,
-    }).then ( res.redirect('/prodacts') ).catch((err) =>  {
+    }).then (
+         res.redirect('/prodacts')).catch((err) =>  {
         if(err) {
             console.log(err);
         }

@@ -81,7 +81,7 @@ exports.loginuser  =  async (req , res) =>  {
             // res.status(200);
             // res.json("zakaria sasi hi")
             res.render( "../views/pages/Home.ejs" , {
-                 username :user[0].usssername,
+                 username :user.usssername,
             })
         }else{
             res.render('../views/pages/login.ejs' , {

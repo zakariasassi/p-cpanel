@@ -1,11 +1,13 @@
 const {Sequelize} = require('sequelize');
 
 
-const sequelize = new Sequelize('brapp', 'root', '', {
+
+const sequelize = new Sequelize('brapp', 'root', 'root', {
     host: 'localhost',
-    dialect:'mysql' ,
+    dialect:'mysql' , 
+    port: 8889,
     define: {
-      timestamps: false
+    timestamps: false
   }
   });
 
